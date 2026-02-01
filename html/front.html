@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Linguistics Society</title>
+
+<style>
+    body {
+        margin: 0;
+        height: 100vh;
+        font-family: "Georgia", serif;
+        background-image: url("book.jpg"); 
+        background-size: cover;
+        background-position: center;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+
+    .card {
+        background: #e5e5e5;
+        width: 90%;
+        max-width: 900px;
+        padding: 40px;
+        display: flex;
+        align-items: center;
+        border-radius: 8px;
+    }
+
+    .logo-section {
+        width: 50%;
+        text-align: center;
+    }
+
+    .logo-section img {
+        width: 200px;
+    }
+
+    .content-section {
+        width: 180%;
+        text-align: center;
+    }
+
+    .content-section h1 {
+        font-size: 42px;
+        font-style: italic;
+        margin-bottom: 30px;
+    }
+
+    .buttons {
+        margin-top: 20px;
+    }
+
+    .buttons button {
+        background: #8c89a5;
+        border: none;
+        padding: 12px 35px;
+        margin: 0 15px;
+        font-size: 20px;
+        border-radius: 30px;
+        cursor: pointer;
+        transition: 0.3s;
+    }
+
+    .buttons button:hover {
+        background: #6f6c8a;
+        color: white;
+    }
+</style>
+</head>
+
+<body>
+
+<div class="card">
+    <div class="logo-section">
+        
+        <img src="Lingsoc logo.png" alt="Linguistics Society Logo">
+    </div>
+
+    <div class="content-section">
+        <h1>WELCOME TO THE<br>LINGUISTICS SOCIETY</h1>
+
+        <div class="buttons">
+            <button onclick="alert('Sign Up clicked')">Sign Up</button>
+            <button onclick="alert('Log In clicked')">Log In</button>
+        </div>
+    </div>
+</div>
+
+</body>
+</html>
