@@ -1,0 +1,217 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>The Linguistics Society | About</title>
+
+<style>
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: Arial, sans-serif;
+}
+
+body {
+    background-color: #f7f7fc;
+    color: #000;
+}
+
+/* HEADER */
+.header {
+    text-align: center;
+    padding: 30px 0;
+    animation: fadeSlide 1s ease;
+}
+
+.header h1 {
+    font-size: 36px;
+}
+
+.logo1 {
+    width: 120px;
+    transition: transform 0.4s;
+}
+
+.logo1:hover {
+    transform: scale(1.1) rotate(-5deg);
+}
+
+/* NAVBAR */
+nav {
+    width: 80%;
+    margin: 20px auto;
+    background-color: #6a5acd;
+    border-radius: 8px;
+}
+
+nav ul {
+    list-style: none;
+    display: flex;
+    justify-content: space-around;
+    padding: 10px 0;
+}
+
+nav ul li a {
+    color: white;
+    text-decoration: none;
+    padding: 8px 20px;
+    transition: 0.3s;
+}
+
+nav ul li a:hover {
+    background-color: white;
+    color: #6a5acd;
+    border-radius: 5px;
+}
+
+/* ABOUT SECTION */
+.container {
+    display: flex;
+    gap: 30px;
+    padding: 50px;
+    justify-content: center;
+}
+
+.left-box,
+.right-box {
+    width: 25%;
+    border-radius: 20px;
+}
+
+.left-box {
+    background-color: #b8e2b3;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.right-box {
+    background-color: #e8d9f3;
+}
+
+.center-box {
+    width: 40%;
+    background: white;
+    padding: 30px;
+    border-radius: 20px;
+    box-shadow: 0 10px 25px rgba(0,0,0,0.1);
+}
+
+.center-box h2 {
+    text-align: center;
+    color: #6a5acd;
+    margin-bottom: 20px;
+}
+
+.center-box h3 {
+    color: #6a5acd;
+    margin-top: 20px;
+    margin-bottom: 10px;
+}
+
+.center-box p {
+    text-align: justify;
+    line-height: 1.7;
+    margin-bottom: 15px;
+}
+
+.center-box ul {
+    margin-left: 20px;
+    line-height: 1.6;
+}
+
+.center-box ul li {
+    margin-bottom: 8px;
+}
+
+/* ANIMATION */
+@keyframes fadeSlide {
+    from {
+        opacity: 0;
+        transform: translateY(40px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* RESPONSIVE */
+@media (max-width: 900px) {
+    .container {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .left-box,
+    .center-box,
+    .right-box {
+        width: 90%;
+    }
+
+    nav {
+        width: 95%;
+    }
+}
+</style>
+</head>
+
+<body>
+
+<!-- HEADER -->
+<div class="header">
+    <img src="Lingsoc logo.png" class="logo1" alt="Logo">
+    <h1>The Linguistics Society</h1>
+</div>
+
+<!-- NAVBAR -->
+<nav>
+    <ul>
+        <li><a href="#">Home</a></li>
+        <li><a href="#">Games</a></li>
+        <li><a href="#">Essay</a></li>
+        <li><a href="#">About</a></li>
+    </ul>
+</nav>
+
+<!-- ABOUT -->
+<div class="container">
+
+    <div class="left-box">
+        <img src="Lingsoc logo.png" class="logo1" alt="Logo">
+    </div>
+
+    <div class="center-box">
+        <h2>About The Linguistics Society</h2>
+
+        <p>
+            The Linguistics Society is intended primarily as a co-curricular forum for students of MA English, CPE, and EJP, but its activities are open to all students and faculty interested in language studies. We hope thus to build a beyond-the-syllabus competence and engagement with ideas and debates in the field, while also promoting interest in research at the boundaries of the discipline.
+        </p>
+
+        <p>
+            The Society encourages learning beyond the classroom by fostering discussions, critical thinking, and interest in linguistic research.
+        </p>
+
+        <h3>The aims and objectives of the association are as follows:</h3>
+        <p>
+            Activities held during the odd semester 2020 include the intramural contests Script Ease and Spellunked. The Society will hold three invited talks during the even semester, and two inter-collegiate contests: Spellunked and Synops. Apart from this, there will be regular social media engagements through Instagram and Twitter, and Podium sessions, where Linguistics students present their observations/micro-research to an interested audience
+        </p>
+        <ul>
+            <li>To promote awareness and interest in linguistics as a field of study</li>
+            <li>To encourage engagement with issues such as language policy and multilingualism</li>
+            <li>To foster a participatory and inclusive academic culture on campus</li>
+        </ul>
+
+        <h3>Activities</h3>
+        <p>
+            The Society will organise webinars and discussions around key areas of work in Linguistics, while also devising contests, and multilingual collaborations between students on campus/online.
+
+        </p>
+    </div>
+
+    <div class="right-box"></div>
+</div>
+
+</body>
+</html>
