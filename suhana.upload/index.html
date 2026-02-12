@@ -1,0 +1,292 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Linguistic Society Portal</title>
+
+  <meta charset="UTF-8">
+  <style>
+    /* Reset */
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    body {
+      font-family: 'Arial', sans-serif;
+      background-color: #eef2f7;
+
+      color: #333;
+    }
+
+    /* Header */
+    header {
+      background-color: #2c3e50;
+      color: #fff;
+      padding: 20px 40px;
+      text-align: center;
+      position: sticky;
+      top: 0;
+      z-index: 1000;
+
+    }
+
+    header h1 {
+      margin-bottom: 10px;
+      font-size: 28px;
+    }
+
+    header nav a {
+      color: #fff;
+      margin: 0 15px;
+      text-decoration: none;
+      font-weight: bold;
+      font-size: 16px;
+    }
+
+    header nav a:hover {
+      text-decoration: underline;
+      color: #27ae60;
+
+    }
+
+    /* Main content area */
+    main {
+      min-height: 70vh;
+
+      display: flex;
+      justify-content: center;
+      align-items: flex-start;
+      padding: 40px 20px;
+    }
+
+    /* Content Card */
+    .content-card {
+      background-color: #fafafa;
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+
+
+      padding: 30px 40px;
+      border-radius: 12px;
+      box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+      max-width: 500px;
+      width: 100%;
+      text-align: center;
+    }
+    .content-card:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 8px 25px rgba(0,0,0,0.15);
+    }
+
+
+
+    .content-card h2 {
+      font-size: 26px;
+
+      color: #333;
+      margin-bottom: 20px;
+    }
+
+    /* Drag & Drop Area */
+    .drop-area {
+      background-color: #fcfcfc;
+      margin-bottom: 20px;
+
+
+      border: 2px dashed #aaa;
+      border-radius: 10px;
+      padding: 40px 20px;
+      cursor: pointer;
+      transition: background-color 0.2s, border-color 0.2s;
+    }
+
+    .drop-area:hover {
+      background-color: #f4f8fb;
+      border-color: #27ae60;
+
+    }
+
+    .drop-area input[type="file"] {
+      display: none; /* hide default input */
+    }
+    .drop-text {
+      font-size: 16px;
+      color: #777;
+    }
+
+
+    #fileinfo {
+      margin-top: 15px;
+      font-size: 14px;
+      color: #666;
+      white-space: pre-line;
+    }
+
+    #fileinfo img {
+      margin-top: 10px;
+      max-width: 100%;
+      border-radius: 8px;
+      box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+    }
+
+    /* Submit Button */
+    #submitBtn {
+      margin-top: 20px;
+      padding: 12px 25px;
+      background-color: #27ae60;
+
+      color: #fff;
+      border: none;
+      border-radius: 25px;
+      cursor: pointer;
+      font-size: 16px;
+      transition: background-color 0.2s;
+      transition: background-color 0.3s ease, transform 0.2s ease;
+
+    }
+
+    #submitBtn:hover {
+      background-color: #2980b9;
+    }
+    #submitBtn:hover {
+      transform: scale(1.05);
+    }
+    #submitBtn:active {
+      transform: scale(0.97);
+    }
+    #submitBtn:disabled {
+      background-color: #aaa;
+      cursor: not-allowed;
+    }
+
+
+
+
+    /* Footer */
+    footer {
+      margin-top: auto;
+
+      text-align: center;
+      padding: 15px 0;
+      margin-top: 40px;
+      color: #666;
+      font-size: 14px;
+      background-color: #ecf0f1;
+    }
+
+    /* Responsive */
+    @media (max-width: 600px) {
+      .content-card {
+        padding: 20px;
+      }
+
+      header h1 {
+        font-size: 22px;
+      }
+
+      header nav a {
+        font-size: 14px;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Header -->
+  <header>
+    <h1>The Linguistic Society</h1>
+
+    <nav>
+      <a href="#">Home</a>
+      <a href="#">About</a>
+      <a href="#">Contact</a>
+    </nav>
+  </header>
+
+  <!-- Main content -->
+  <main>
+    <div class="content-card">
+      <h2>Upload Linguistic Documents</h2>
+
+      <div class="drop-area">
+        <p class="drop-text"> Drag & drop your file here<br>or click to select</p>
+
+
+      <input type="file" accept=".pdf,.doc,.docx,.png,.jpg">
+
+      </div>
+
+      <p id="fileinfo"></p>
+      <button id="submitBtn">Upload File</button>
+
+    </div>
+  </main>
+
+  <!-- Footer -->
+  <footer>
+    <p>© 2026 Linguistic Society. All rights reserved.</p>
+  </footer>
+
+  <!-- JavaScript -->
+  <script>
+    submitBtn.disabled = true;
+
+    const dropArea = document.querySelector('.drop-area');
+    const fileInput = dropArea.querySelector('input[type="file"]');
+    const fileInfo = document.getElementById('fileinfo');
+    const submitBtn = document.getElementById('submitBtn');
+
+    // Click to open file dialog
+    dropArea.addEventListener('click', () => {
+      fileInput.click();
+    });
+
+    // File selected via input
+    fileInput.addEventListener('change', () => {
+      handleFile(fileInput.files[0]);
+    });
+
+    // Drag & Drop events
+    dropArea.addEventListener('dragover', (e) => {
+      e.preventDefault();
+      dropArea.style.backgroundColor = '#e0e0e0';
+    });
+
+    dropArea.addEventListener('dragleave', () => {
+      dropArea.style.backgroundColor = '';
+    });
+
+    dropArea.addEventListener('drop', (e) => {
+      e.preventDefault();
+      dropArea.style.backgroundColor = '';
+      const file = e.dataTransfer.files[0];
+      handleFile(file);
+    });
+
+    // Handle file info and preview
+    function handleFile(file) {
+      fileInfo.innerHTML = '';
+      if (file) {
+        fileInfo.innerText =
+          `Name: ${file.name}\nType: ${file.type || 'N/A'}\nSize: ${Math.round(file.size / 1024)} KB`;
+
+        if (file.type.startsWith('image/')) {
+          const img = document.createElement('img');
+          img.src = URL.createObjectURL(file);
+          fileInfo.appendChild(img);
+        }
+        submitBtn.innerText = "File Ready to Upload";
+        submitBtn.disabled = false;
+
+
+      }
+    }
+
+    // Submit button
+    submitBtn.addEventListener('click', () => {
+      alert('File submitted successfully! (No backend yet)');
+    });
+  </script>
+
+</body>
+</html>
