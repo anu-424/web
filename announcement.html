@@ -1,0 +1,246 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>The Linguistic Society</title>
+
+<style>
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+    font-family: Arial, sans-serif;
+}
+
+body{
+    background:#e6e6e6;
+}
+
+
+.header{
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    gap:15px;
+    padding:20px;
+}
+
+.header img{
+    width:60px;
+    height:60px;
+}
+
+.header h1{
+    font-size:38px;
+    font-weight:bold;
+    letter-spacing:2px;
+}
+
+
+.navbar{
+    width:85%;                 
+    margin:20px auto;          
+    display:flex;
+    justify-content:center;
+    background:#6c6ab3;
+    border-radius:8px;         
+
+
+}
+
+.navbar a{
+    padding:15px 45px;
+    text-decoration:none;
+    color:white;
+    font-weight:bold;
+    transition:0.3s;
+}
+
+.navbar a:hover{
+    background:#4b44c7;
+}
+
+
+.navbar a.active{
+    background:#ffcc00;
+    color:black;
+}
+
+
+.slider-container{
+    width:85%;
+    margin:40px auto;
+    overflow:hidden;
+    position:relative;
+}
+
+.slider{
+    display:flex;
+    transition:0.5s ease-in-out;
+}
+
+.card{
+    min-width:100%;
+    background:#88e188;
+    padding:60px;
+}
+
+
+.profile{
+    display:flex;
+    align-items:center;
+    gap:10px;
+}
+
+.profile img{
+    width:45px;
+    height:45px;
+    border-radius:50%;
+}
+
+.notice-box{
+    background:#f5f5f5;
+    border-radius:20px;
+    padding:35px;          
+    margin-top:10px;
+    width:90%;             
+    font-size:20px;       
+}
+
+
+.flex{
+    display:flex;
+    gap:20px;
+    align-items:center;
+}
+
+.poster{
+    width:70px;
+    border-radius:10px;
+}
+
+.date{
+    margin-top:10px;
+    font-size:14px;
+}
+
+
+.next-btn, .prev-btn{
+    position:absolute;
+    top:50%;
+    transform:translateY(-50%);
+    padding:10px 15px;
+    background:black;
+    color:white;
+    border:none;
+    cursor:pointer;
+    font-size:18px;
+}
+
+.next-btn{ right:10px; }
+.prev-btn{ left:10px; }
+
+</style>
+</head>
+<body>
+
+<!-- HEADER WITH LOGO -->
+<div class="header">
+    <img src="Lingsoc logo.png" alt="logo">
+    <h1>THE LINGUISTIC SOCIETY</h1>
+</div>
+
+<!-- NAVBAR -->
+<div class="navbar">
+    <a href="#" class="nav-link active">HOME</a>
+    <a href="#" class="nav-link">NOTICE</a>
+    <a href="#" class="nav-link">GAMES</a>
+    <a href="#" class="nav-link">ESSAY</a>
+    <a href="#" class="nav-link">ABOUT</a>
+</div>
+
+<!-- SLIDER -->
+<div class="slider-container">
+
+    <div class="slider" id="slider">
+
+        <div class="card">
+            <div class="profile">
+                <img src="Lingsoc logo.png">
+                <span style="color:#0b84ff;">John_mason</span>
+            </div>
+
+            <div class="notice-box">
+                <h3>🏆 Today’s Spelling Bee Winner</h3>
+                <p>
+                    Today’s Spelling bee was won by Manoj Mishra.
+                    Congratulations to all participants!
+                </p>
+            </div>
+
+            <div class="date">Jan 31, 2026</div>
+        </div>
+
+        
+        <div class="card">
+            <div class="profile">
+                <img src="images.jpg">
+                <span style="color:#0b84ff;">Rohit_123_AP</span>
+            </div>
+
+            <div class="flex">
+                <img src="9a19604ac7ff9f2b395c34b17f31d0c4.jpg" class="poster">
+
+                <div class="notice-box">
+                    <h3>Essay Competition</h3>
+                    <p>
+                        Essay competition is on 2nd May in room no. N204.
+                    </p>
+                </div>
+            </div>
+
+            <div class="date">Jan 7, 2026</div>
+        </div>
+
+    </div>
+
+    
+    <button class="prev-btn" onclick="moveSlide(-1)">❮</button>
+    <button class="next-btn" onclick="moveSlide(1)">❯</button>
+
+</div>
+
+<script>
+
+
+const navLinks = document.querySelectorAll(".nav-link");
+
+navLinks.forEach(link=>{
+    link.addEventListener("click", function(){
+        navLinks.forEach(l=>l.classList.remove("active"));
+        this.classList.add("active");
+    });
+});
+
+
+let index = 0;
+const slider = document.getElementById("slider");
+const totalSlides = document.querySelectorAll(".card").length;
+
+function moveSlide(step){
+    index += step;
+
+    if(index >= totalSlides){
+        index = 0;
+    }
+    if(index < 0){
+        index = totalSlides - 1;
+    }
+
+    slider.style.transform = `translateX(-${index * 100}%)`;
+}
+
+</script>
+
+</body>
+</html>
