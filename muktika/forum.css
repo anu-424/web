@@ -1,0 +1,105 @@
+body {
+  background: #f5f2ff;
+  font-family: Arial, sans-serif;
+}
+
+.forum-container {
+  width: 70%;
+  margin: auto;
+}
+
+/* Header */
+.header {
+  text-align: center;
+  padding: 20px;
+}
+
+/* Navbar */
+.navbar {
+  display: flex;
+  justify-content: space-around;
+  background: #7b6adf;
+  padding: 10px;
+  border-radius: 10px;
+}
+
+.navbar button {
+  background: none;
+  border: none;
+  color: white;
+  font-size: 16px;
+  cursor: pointer;
+}
+
+/* Forum title */
+.forum-title {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin: 20px 0;
+}
+
+.new-post {
+  background: #7b6adf;
+  color: white;
+  border: none;
+  padding: 10px 15px;
+  border-radius: 8px;
+  cursor: pointer;
+}
+
+/* Post card */
+.post {
+  background: white;
+  padding: 15px;
+  border-radius: 15px;
+  margin-bottom: 20px;
+}
+
+.post img {
+  width: 100%;
+  border-radius: 10px;
+  margin: 10px 0;
+}
+
+.actions {
+  color: #666;
+}
+.forum-container {
+  width: 60%;
+  margin: auto;
+}
+
+.post {
+  background: white;
+  padding: 15px;
+  margin: 15px 0;
+  border-radius: 10px;
+}
+
+.comment {
+  margin-left: 10px;
+  color: #555;
+}
+
+.new-post {
+  padding: 10px;
+  margin-bottom: 20px;
+}
+
+.modal {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0,0,0,0.5);
+}
+
+.modal-box {
+  background: white;
+  padding: 20px;
+  width: 300px;
+  margin: 100px auto;
+  border-radius: 10px;
+}
